@@ -23,6 +23,7 @@ let averageHRD = addedHRD / 3
 
 print(averageHRD)
 
+// Значения отличаются, потому что теперь мы можем видеть не только целую часть от деления 
 //:  Imagine that partway through the day a user has taken 3,467 steps out of the 10,000 step goal. Create constants `steps` and `goal`. Both will need to be of type `Double` so that you can perform accurate calculations. `steps` should be assigned the value 3,467, and `goal` should be assigned 10,000. Create a constant `percentOfGoal` that equals an expression that evaluates to the percent of the goal that has been achieved so far.
 let steps: Double = 3467
 let goal: Double = 10000
