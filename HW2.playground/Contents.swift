@@ -8,8 +8,12 @@ class Stack<T> {
         values.append(value)
     }
     
-    func pop() -> T {
-        values.removeLast()
+    func pop() -> T? {
+        if values.isEmpty {
+            return nil
+        } else {
+            return values.removeLast()
+        }
     }
     
     func peek() -> T? {
@@ -25,13 +29,28 @@ class Stack<T> {
     }
 }
 
+extension Stack where T: Equatable {
+    func remove(_ value: T) {
+        values.removeAll(where:{ $0 == value })
+    }
+}
+
 // Example
 var stackInt = Stack<Int>();
 
-stackInt.push(2)
-stackInt.push(3)
+stackInt.push(2) // [2]
+stackInt.push(3) // [2, 3]
+stackInt.push(2) // [2, 3, 2]
 
-stackInt.pop()
+stackInt.pop() // [2, 3]
+
+stackInt.push(2) // [2, 3, 2]
+
+stackInt.remove(2) // [3]
+
+stackInt.pop() // 3
+
+stackInt.pop() // nil
 
 var stackString = Stack<String>();
 
