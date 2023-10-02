@@ -39,10 +39,12 @@ class ViewController: UIViewController {
         
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        
+        print("viewDidLoad")
     }
 
     private func setUpView() {
@@ -102,6 +104,40 @@ class ViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+// MARK: - Logs
+
+extension ViewController {
+    override func loadView() {
+        super.loadView()
+        
+        print("loadView")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("viewDidDisappear")
     }
 }
 
